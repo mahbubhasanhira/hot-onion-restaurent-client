@@ -1,0 +1,13 @@
+.carousel_food img{
+    width: 50%;
+    height: 100%;
+    margin:0 10px;
+    object-fit: contain;
+    object-position: center;
+    cursor: pointer;
+}
+.arrow_icon{
+    font-size: 25px;
+    cursor: pointer;
+    color: #000000;
+}

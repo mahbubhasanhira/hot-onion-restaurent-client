@@ -1,0 +1,37 @@
+.Pending{
+    cursor: pointer;
+    border: none;
+    color: #FF4545;
+    background-color: #ffffff;
+}
+.Done{
+    cursor: pointer;
+    border: none;
+    color: #009444;
+    background-color:  #ffffff;
+}
+.ongoing{
+    cursor: pointer;
+    border: none;
+    color:#ffa600;
+    background-color:  #ffffffea;
+}
+.status_Container{
+    margin-right: 50px;
+}
+.loading_spin{
+    width: 50px;
+    height:50px
+}
+
+@media only screen and (max-width: 991px) {
+    .right_inside_container{
+        padding: 10px;
+    }
+  }
+
+@media only screen and (max-width: 767px) {
+    .status_Container{
+        margin-right: 10px;
+    }
+  }

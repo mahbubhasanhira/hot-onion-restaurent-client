@@ -1,0 +1,36 @@
+.dashboard_right_container{
+    background-color: #f4f7fc;
+    min-height:600px;
+    padding:10px 40px;
+}
+
+.right_inside_container{
+    width: 100%!important; 
+    background-color: #ffffff;
+    border-radius: 20px;
+     padding:30px;
+     margin: 0 auto;
+ }
+
+ 
+@media only screen and (max-width: 991px) {
+    .dashboard_r_div_container{
+        margin: 0 auto;
+    }
+    .for_mobile_responsive{
+        display:none;
+    }
+    .dashboard_right_container{
+        min-height: 400px;
+    }
+  }
+
+ @media only screen and (max-width: 767px) {
+    .dashboard_r_div_container{
+        padding:10px 0 10px 10px;
+        margin: 5px;
+    }
+    .dashboard_right_container{
+        padding:20px;
+    }
+  }

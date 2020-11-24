@@ -1,0 +1,35 @@
+.sidebar_option{
+    margin-top: 40px;
+    margin-left: 15%;
+}
+.sidebar_option ul{
+    padding-inline-start: 20px;
+}
+.sidebar_option ul li {
+    list-style-type: none;
+    margin:5px 0;
+    padding:5px 0;
+    text-align: start;
+}
+
+.sidebar_link{
+    text-decoration: none!important;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+    transition:.5s;
+}
+.sidebar_link:hover{
+    color: #e71010;
+    padding-left: 15px;
+}
+@media only screen and (max-width: 991px) {
+    .sidebar_option{
+        margin-top: 0px;
+        margin-left: 0;
+    }
+    .sidebar_option ul li{
+        margin:0 ;
+    }
+  }
+  

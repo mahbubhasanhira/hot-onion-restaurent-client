@@ -1,0 +1,19 @@
+.notFound{
+    text-align: center;
+}
+.notFoundHome{
+    text-decoration: none;
+    font-size:16px;
+    padding:5px 20px;
+    color:#ffffff;
+    background-color: #000000;
+    border-radius: 5px;
+    border: 1px solid black;
+    transition:.8s ease-in-out;
+}
+
+.notFoundHome:hover{
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #000000;
+}

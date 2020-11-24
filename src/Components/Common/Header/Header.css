@@ -1,0 +1,75 @@
+.header{
+    padding:20px 5px;
+}
+.home img{
+    width: 150px;
+    height: 40px;
+    object-fit: cover;
+    object-position: center;
+}
+.userName{
+    padding:5px 10px;
+    margin:0 0 0 20px;
+}
+.login_btn{
+    text-decoration: none;
+    color: black;
+    padding:5px 10px;
+    margin:0 20px;
+}
+.login_btn:hover{
+    color:black;
+    text-decoration: none;  
+}
+.sidebar_for_header{
+    display:none;
+}
+
+.signIn_btn{
+    text-decoration: none;
+    border: none;
+    background:rgb(231, 10, 10);
+    border-radius: 20px;
+    padding: 3px 20px 7px 20px;
+    color: rgb(255, 255, 255);
+}
+.signIn_btn:hover{
+    text-decoration: none;
+    color: black;
+}
+.checkOutIconForMobile{
+    display:none;
+    text-decoration: none; 
+    color: black;
+}
+.checkOutIconForMobile{
+    text-decoration: none; 
+}
+.checkOutIcon{
+    text-decoration: none; 
+    color: black;
+}
+.checkOutIcon:hover{
+    text-decoration: none; 
+}
+.foodQuantity{
+    color: #ffffff;
+    font-size: 12px;
+    background-color: rgb(247, 45, 45);
+    margin: 0;
+    padding:0 5px!important;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 991px) {
+    .checkOutIcon{
+        display:none;
+    }
+    .checkOutIconForMobile{
+        display:block;
+        margin-right: 20px;
+    }
+    .sidebar_for_header{
+        display:block;
+    }
+  }

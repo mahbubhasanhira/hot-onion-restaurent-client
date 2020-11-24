@@ -1,0 +1,31 @@
+.banner {
+    background-image: url('../../../hot-onion-restaurent-resources/bannerbackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:500px;
+    padding:150px 0;
+}
+.search_input{
+    margin: 0 auto;
+    display: inline;
+}
+.search_input .form_control{
+    border: none;
+    padding:7px 20px;
+    border-radius: 25px;
+}
+.search_input .form_control:focus{
+    border: none !important;
+}
+.search_input .search_btn{
+    background-color:rgb(231, 10, 10);
+    border:none;
+    border-radius: 25px;
+    padding:7px 30px;
+    margin-left: -30px;
+    color: rgb(255, 255, 255);
+}
+.search_input .search_btn:hover{
+    color:black
+}

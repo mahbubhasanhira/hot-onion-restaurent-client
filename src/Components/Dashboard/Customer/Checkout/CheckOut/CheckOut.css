@@ -1,0 +1,9 @@
+.shipping_data_container{
+    padding:0 3rem;
+}
+
+@media only screen and (max-width: 991px) {
+    .shipping_data_container{
+        padding:0 1.5rem;
+    }
+  }

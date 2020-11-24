@@ -1,0 +1,48 @@
+.place_order_container{
+    background-color: #F5F5F5;
+    width: 70%;
+    margin-left: 10%;
+    padding:20px;
+    border-radius: 10px;
+    text-align: start;
+}
+.bike_container{
+    max-height: 200px;
+}
+.bike_container img{
+    max-height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+.white_bg{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding:10px;
+    margin-top: 20px;
+}
+.helmet_container{
+    margin-right: 20px;
+}
+
+.helmet_container img{
+    height: 60px;
+    widows: 60px;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+@media only screen and (max-width: 991px) {
+    .place_order_container{
+        width: 90%;
+        margin-left: auto;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .place_order_container{
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+  }

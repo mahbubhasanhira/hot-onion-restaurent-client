@@ -1,0 +1,15 @@
+.services_form_container{
+    min-height: 300px;
+}
+
+.form_submit_btn{
+   color: #ffffff;
+    background-color:#E70A0A;
+    border: none;
+    border-radius: 5px;
+    padding:8px 30px!important;
+    margin-top: 5px;
+}
+.form_submit_btn:hover{
+    color: #000000;
+}

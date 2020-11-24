@@ -1,0 +1,104 @@
+.login_container{
+    width:50%;
+    margin: 0 auto;
+}
+
+.signInLogo{
+    width:200px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 10px;
+}
+
+.account_container{
+    width:100%;
+    padding:10px 0;
+}
+
+.account_container input{
+    width:60%;
+    padding:7px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color:rgb(243, 243, 243);
+
+}
+
+#sign_up{
+    color:#ffffff;
+    background-color: #E70A0A;
+    margin-bottom: 10px;
+}
+#sign_up:hover{
+    color: black;
+    
+}
+
+.popupSignIn{
+    width:60%;
+    border: 1px solid gray;
+    margin:10px auto;
+    padding:7px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.have_account{
+    color:#F9A51A;
+    cursor: pointer;
+}
+.have_account:hover{
+    color: rgb(10, 96, 209);
+}
+.or{
+    text-align: center;
+}
+.popupSignIn img{
+    width:30px;
+    height:30px;
+    object-fit: cover;
+    object-position: center;
+}
+.popupSignIn button{
+    width:80%;
+    text-decoration: none;
+    border: none;
+    background-color: #ffffff;
+    margin:0 auto;
+}
+
+#remember{
+  width: 1em;
+  height: 1em; 
+}
+.forgot_password{
+    color:#F9A51A;
+    margin-left: 60px;
+    cursor: pointer;
+}
+.forgot_password:hover{
+    color: rgb(10, 96, 209);
+}
+
+
+@media only screen and (max-width: 991px) {
+    .login_container{
+        width:70%;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .login_container{
+        width:100%;
+    }
+  }
+
+  @media only screen and (max-width: 575px) {
+    .login_container{
+        width:100%;
+    }
+    .account_container input{
+        width:80%;
+    }
+    
+  }

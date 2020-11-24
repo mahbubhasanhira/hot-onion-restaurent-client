@@ -1,0 +1,34 @@
+.nav_item ul li{
+    display: inline-block;
+    margin: 50px 20px;
+    padding:5px 10px;
+    background-color: none;
+}
+.nav_link{
+    text-decoration: none;
+    color:#000000;
+    background-color: #ffffff;
+    border: none;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+.active, .nav_link:hover{
+    text-decoration: none;
+    color:rgb(231, 10, 10);
+    border-bottom: 2px solid red;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav_item{
+        width: 100%;
+    }
+    .nav_item ul{   
+        padding-left: 0;
+    }
+    .nav_item ul li{
+        display: inline-block;
+        margin: 20px 10px;
+        background-color: none;
+    }
+ }

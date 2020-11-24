@@ -1,0 +1,34 @@
+.status_contain{
+    width: 150px;
+    text-align: center;
+    padding:10px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.card_height{
+    min-height:200px;
+    max-height: 400px;
+    margin: 0  auto !important;
+}
+.card_height:hover{
+    cursor: auto;
+}
+.card_over{
+    overflow: auto;
+}
+.pending{
+    color: #FF4545;
+    background-color: #FFE3E3;
+}
+
+.done{
+    color: #009444;
+    background-color:  #C6FFE0;
+}
+
+.on_going{
+    color:#ffa600;
+    background-color:  #ffeab3ea;
+}

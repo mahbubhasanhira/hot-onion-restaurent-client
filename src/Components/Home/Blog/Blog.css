@@ -1,0 +1,38 @@
+.blog{
+    text-align: start;
+    margin: 50px auto;
+}
+
+.p-text{
+    margin:20px 0;
+    font-weight: 500;
+}
+
+.card_container{
+    margin: 50px auto;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.custom_card{
+    border-radius: 20px;
+    border: 1px solid #ffffff;
+    margin: 15px;
+}
+
+.card_Body{
+    margin-top: 20px;
+}
+
+.card_b_text{
+    padding:0px 10px;
+}
+
+.card_p{
+    color:gray;
+}
+
+.right_arrow{
+    color: rgb(238, 21, 21);
+    font-size: 18px;
+}
