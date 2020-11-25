@@ -14,7 +14,7 @@ const MakeAdminForm = () => {
 const  handleSubmit = (e) => {
     e.preventDefault();
     if(isAdmin){
-        fetch(`http://localhost:8080/make_admin?check_admin=${loggedInUser.email}`, {
+        fetch(`https://hot-onion-101.herokuapp.com/make_admin?check_admin=${loggedInUser.email}`, {
                 method:'POST',
                 headers:{'Content-Type': 'application/json'},
                 body:JSON.stringify(adminEmail)

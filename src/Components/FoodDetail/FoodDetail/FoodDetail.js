@@ -13,7 +13,7 @@ const FoodDetail = () => {
     const [foodItem, setFoodItem ] = useState([]);
 
 useEffect(() =>{
-    fetch(`http://localhost:8080/get_single_food/${category}`)
+    fetch(`https://hot-onion-101.herokuapp.com/get_single_food/${category}`)
     .then(res => res.json())
     .then(data =>{
         if(data.length > 0){

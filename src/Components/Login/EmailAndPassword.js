@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
-const EmailAndPassword = ({onSubmit, setForgotPassword, forgotPassword, setNewUser, newUser}) => {
+const EmailAndPassword = ({ onSubmit, setForgotPassword, forgotPassword, setNewUser, newUser}) => {
     
+    const [typeText, setTypeText] = useState(false);
     const { register, handleSubmit, errors } = useForm();
 
     return (
@@ -12,7 +15,14 @@ const EmailAndPassword = ({onSubmit, setForgotPassword, forgotPassword, setNewUs
                 <br/>
                 {errors.email && <span>Email is required</span>}
                 <br/>
-                <input type="password" ref={register({ required: true })} name="password"  placeholder='Password'/>
+               
+                    <input style={{display:'inline-block'}} type={typeText ? 'text': 'password'} ref={register({ required: true })} name="password"  placeholder='Password'/>
+                    { typeText ? 
+                                <FontAwesomeIcon onClick={() => setTypeText(!typeText)} className='typeChangeIcon' icon={faEye} />
+                            :
+                                <FontAwesomeIcon onClick={() => setTypeText(!typeText)} className='typeChangeIcon' icon={faEyeSlash}/>
+                    }
+                
                 <br/>
                 {errors.password && <span>Password is required</span>}
                 <br/>    

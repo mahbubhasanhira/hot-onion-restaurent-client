@@ -10,7 +10,7 @@ const OrderList = () => {
 
 useEffect(() => {
     if(isAdmin){
-        fetch(`http://localhost:8080/order_list?admin_email=${loggedInUser.email}`)
+        fetch(`https://hot-onion-101.herokuapp.com/order_list?admin_email=${loggedInUser.email}`)
         .then(res => res.json())
         .then(data => setOrderList(data))
         .catch(error => console.log(error));

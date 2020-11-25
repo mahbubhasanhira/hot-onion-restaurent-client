@@ -25,7 +25,7 @@ if(shippingData.name){
                 orderEmail: loggedInUser.email,
             };
              handleConfirm = () => {
-                fetch('http://localhost:8080/add_order', {
+                fetch('https://hot-onion-101.herokuapp.com/add_order', {
                     method:'POST',
                     headers:{'Content-Type': 'application/json'},
                     body:JSON.stringify(orderDetail)

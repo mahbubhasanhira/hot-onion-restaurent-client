@@ -12,7 +12,7 @@ const handleLoadOrder = () => {
     const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
         const token =  sessionStorage.getItem('token');
         if(userInfo.email && token){
-            fetch(`http://localhost:8080/my_orders?email=${userInfo.email}`,{
+            fetch(`https://hot-onion-101.herokuapp.com/my_orders?email=${userInfo.email}`,{
                 method: 'GET',
                 headers:{
                     'Content-Type' : 'application/json',

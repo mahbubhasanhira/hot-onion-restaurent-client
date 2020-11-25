@@ -35,7 +35,7 @@ const handleFoodDetailSubmit = (e) => {
             formData.append('description', foodDetail.description);
             formData.append('price', foodDetail.price);
 
-                fetch(`http://localhost:8080/add_food?check_admin=${loggedInUser.email}`, {
+                fetch(`https://hot-onion-101.herokuapp.com/add_food?check_admin=${loggedInUser.email}`, {
                     method: 'POST',
                     body: formData
                 })

@@ -80,6 +80,12 @@
     color: rgb(10, 96, 209);
 }
 
+.typeChangeIcon{
+    cursor: pointer;
+    position: relative;
+    margin-left: -30px;
+    margin-right:10px;
+}
 
 @media only screen and (max-width: 991px) {
     .login_container{
@@ -101,4 +107,10 @@
         width:80%;
     }
     
+  }
+
+  @media only screen and (max-width: 450px) {
+    .popupSignIn{
+        width: 80%;
+    }
   }

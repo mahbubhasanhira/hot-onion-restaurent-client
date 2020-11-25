@@ -30,7 +30,7 @@ useEffect(() =>{
   const newLoggedInUser = JSON.parse(sessionStorage.getItem('userInfo'));
         if(newLoggedInUser){
             if(newLoggedInUser.email){
-              fetch(`http://localhost:8080/isAdmin?email=${newLoggedInUser.email}`)
+              fetch(`https://hot-onion-101.herokuapp.com/isAdmin?email=${newLoggedInUser.email}`)
               .then(res => res.json())
               .then(data => {
                 if(data){

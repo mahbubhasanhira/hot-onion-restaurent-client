@@ -9,7 +9,7 @@ const ClientReview = () => {
 const [allReview, setAllReview] = useState([]);
 
 useEffect(() => {
-    fetch('http://localhost:8080/review')
+    fetch('https://hot-onion-101.herokuapp.com/review')
     .then(res => res.json())
     .then(data => setAllReview(data))
     .catch(error =>console.log(error));

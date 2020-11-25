@@ -10,7 +10,7 @@ const ReviewForm = () => {
      const onSubmit = (data) => {
          const review = {...data, 'img': loggedInUser.photoURL};
         
-         fetch('http://localhost:8080/add_review', {
+         fetch('https://hot-onion-101.herokuapp.com/add_review', {
                 method:'POST',
                 headers:{'Content-Type': 'application/json'},
                 body:JSON.stringify(review)

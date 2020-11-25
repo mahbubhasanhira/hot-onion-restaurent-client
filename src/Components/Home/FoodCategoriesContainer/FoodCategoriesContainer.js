@@ -38,7 +38,7 @@ useEffect(()=>{
     setFoodsCategories(allFood);
  }
  if(allFood.length === 0){
-    fetch('http://localhost:8080/get_all_food')
+    fetch('https://hot-onion-101.herokuapp.com/get_all_food')
     .then(res => res.json())
     .then(data => {
         if(data.length){

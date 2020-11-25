@@ -10,7 +10,7 @@ const OrderListCard = ({order_list, index}) => {
         const id = e.target.name;
         const changeStatus = e.target.value;
         setStatus(changeStatus);
-        fetch(`http://localhost:8080/updateStatus/${id}`, {
+        fetch(`https://hot-onion-101.herokuapp.com/updateStatus/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({changeStatus}),

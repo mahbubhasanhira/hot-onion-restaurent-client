@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const CreateAccount = ({onSubmit, setNewUser, newUser}) => {
-
+    const [typeTextP, setTypeTextP] = useState(false);
+    const [typeTextCP, setTypeTextCP] = useState(false);
     const { register, handleSubmit, watch, errors } = useForm();
 
     return (
@@ -16,11 +19,21 @@ const CreateAccount = ({onSubmit, setNewUser, newUser}) => {
                 <br/>
                 {errors.email && <span>Email is required</span>}
                 <br/>
-                <input type="password" ref={register({ required: true })} name="password"  placeholder='Password'/>
+                <input style={{display:'inline-block'}} type={typeTextP ? 'text': 'password'} ref={register({ required: true })} name="password"  placeholder='Password'/>
+                { typeTextP ? 
+                                <FontAwesomeIcon onClick={() => setTypeTextP(!typeTextP)} className='typeChangeIcon' icon={faEye} />
+                            :
+                                <FontAwesomeIcon onClick={() => setTypeTextP(!typeTextP)} className='typeChangeIcon' icon={faEyeSlash}/>
+                }
                 <br/>
                 {errors.password && <span>Password is required</span>}
                 <br/>
-                <input type="password" ref={register({validate: (value) => value === watch('password')})} name='confirmPassword' placeholder='Confirm Password'/>
+                <input style={{display:'inline-block'}} type={typeTextCP ? 'text': 'password'} ref={register({validate: (value) => value === watch('password')})} name='confirmPassword' placeholder='Confirm Password'/>
+                    { typeTextCP ? 
+                                <FontAwesomeIcon onClick={() => setTypeTextCP(!typeTextCP)} className='typeChangeIcon' icon={faEye} />
+                            :
+                                <FontAwesomeIcon onClick={() => setTypeTextCP(!typeTextCP)} className='typeChangeIcon' icon={faEyeSlash}/>
+                    }
                 <br/>
                 {errors.confirmPassword && <span>Password did not matched</span>}
                 <br/>
