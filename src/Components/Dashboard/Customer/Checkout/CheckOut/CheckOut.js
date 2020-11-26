@@ -23,6 +23,8 @@ if(shippingData.name){
                 paymentData:{...paymentData},
                 status:'Pending',
                 orderEmail: loggedInUser.email,
+                orderDate: new Date().toLocaleDateString(),
+                orderTime: new Date().toLocaleTimeString(),
             };
              handleConfirm = () => {
                 fetch('https://hot-onion-101.herokuapp.com/add_order', {

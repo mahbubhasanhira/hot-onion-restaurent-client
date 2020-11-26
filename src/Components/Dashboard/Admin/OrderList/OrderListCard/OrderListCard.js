@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './OrderListCard.css';
 
 const OrderListCard = ({order_list, index}) => {
- 
     const [status, setStatus] = useState(order_list.status);
     const [paymentMethod, setPaymentMethod] = useState('Cash On Delivery');
 
@@ -59,7 +58,9 @@ useEffect(() => {
             <div className="card-body card_over text-left">
                 <div>
                     <p className='mt-0 mb-0'><strong>Order ID: </strong>{order_list._id}</p>
-                    <p className='mt-0 mb-2'><strong>Order Email: </strong>{order_list.orderEmail}</p>
+                    <p className='mt-0 mb-0'><strong>Order Email: </strong>{order_list.orderEmail}</p>
+                    <p className='mt-0 mb-0'><strong>Order Time: </strong>{order_list.orderTime}</p>
+                    <p className='mt-0 mb-2'><strong>Order Date: </strong>{order_list.orderDate}</p>
                 </div>
                 <div>
                     <h5  style={{color:'green'}}>Shipping Detail:</h5>

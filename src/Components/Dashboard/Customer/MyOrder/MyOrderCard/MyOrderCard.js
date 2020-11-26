@@ -29,6 +29,11 @@ useEffect(() => {
                 </div>
                 <div className="card-body card_over text-left">
                     <div>
+                    <p className='mt-0 mb-0'><strong>Order ID: </strong>{orderList._id}</p>
+                    <p className='mt-0 mb-0'><strong>Order Time: </strong>{orderList.orderTime}</p>
+                    <p className='mt-0 mb-2'><strong>Order Date: </strong>{orderList.orderDate}</p>
+                    </div>
+                    <div>
                         <h5  style={{color:'green'}}>Shipping Detail:</h5>
                         <p className='mt-0 mb-0'><strong>Name:</strong>{orderList.shippingData.name}</p>
                         <p className='mt-0 mb-0'><strong>Email: </strong>{orderList.shippingData.email}</p>

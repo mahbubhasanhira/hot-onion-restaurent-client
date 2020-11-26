@@ -54,7 +54,9 @@ const Header = () => {
                     }
                     <Link className='login_btn' to={redirect_admin}>Dashboard</Link>
                     <div className='sidebar_for_header'>
-                        <Sidebar/>
+                       {
+                            loggedInUser.isSignIn && <Sidebar/>
+                       }
                     </div>
                     {
                         loggedInUser.isSignIn ?
