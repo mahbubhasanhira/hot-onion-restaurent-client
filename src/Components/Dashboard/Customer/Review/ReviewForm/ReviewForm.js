@@ -7,12 +7,16 @@ const ReviewForm = () => {
     const {loggedInUser} = useContext(UserContext);
     const { register, handleSubmit } = useForm();
     
+    const token =  sessionStorage.getItem('token');
      const onSubmit = (data) => {
          const review = {...data, 'img': loggedInUser.photoURL};
         
-         fetch('https://hot-onion-101.herokuapp.com/add_review', {
+         fetch(`https://hot-onion-101.herokuapp.com/add_review?user_email=${loggedInUser.email}`, {
                 method:'POST',
-                headers:{'Content-Type': 'application/json'},
+                headers:{
+                    'Content-Type' : 'application/json',
+                    "authorization" : `Bearer ${token}`
+                },
                 body:JSON.stringify(review)
             })
             .then(res => res.json())

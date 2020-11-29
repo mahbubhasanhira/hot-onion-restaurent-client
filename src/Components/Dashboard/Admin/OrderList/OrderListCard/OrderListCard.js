@@ -4,14 +4,18 @@ import './OrderListCard.css';
 const OrderListCard = ({order_list, index}) => {
     const [status, setStatus] = useState(order_list.status);
     const [paymentMethod, setPaymentMethod] = useState('Cash On Delivery');
-
-    const handleChange = (e) => {
+    
+    const token =  sessionStorage.getItem('token');
+    const handleUpdateStatus = (e) => {
         const id = e.target.name;
         const changeStatus = e.target.value;
         setStatus(changeStatus);
         fetch(`https://hot-onion-101.herokuapp.com/updateStatus/${id}`, {
             method: 'PATCH',
-            headers: { 'Content-Type': 'application/json' },
+            headers:{
+                'Content-Type' : 'application/json',
+                "authorization" : `Bearer ${token}`
+            },
             body: JSON.stringify({changeStatus}),
         })
         .then(res => res.json())
@@ -47,7 +51,7 @@ useEffect(() => {
             <div className="mb-2 d-flex align-items-center justify-content-between pt-3 pl-3">
                 <h5>{index + 1}.</h5>
                 <div className='status_Container'>
-                    <select  className={customColor} id="select1" onChange={handleChange} name={order_list._id}>
+                    <select  className={customColor} id="select1" onChange={handleUpdateStatus} name={order_list._id}>
                     <option value={status} id='selected' selected='selected'>{order_list.status}</option>
                     <option className='Pending'  value="Pending" >Pending</option>
                     <option className='Done' value="Done">Done</option>

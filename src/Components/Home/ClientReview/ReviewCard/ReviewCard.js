@@ -4,11 +4,11 @@ const ReviewCard = ({review}) => {
 
 const reviewStyle = {
     fontSize:'22px',
-    backgroundColor:'#F5F5F5',
+    color: "#ffffff",
+    backgroundColor:'#009432',
     padding:'20px',
     borderRadius:'50%',
     marginRight:'10px',
-
 }
 
     return (

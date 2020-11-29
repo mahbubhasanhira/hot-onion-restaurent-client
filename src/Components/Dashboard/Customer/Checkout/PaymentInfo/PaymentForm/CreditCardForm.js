@@ -73,18 +73,6 @@ const CreditCardForm = ({setPaymentData}) => {
         <strong>Card number</strong>
         <CardNumberElement
           options={options}
-          onReady={() => {
-            console.log("CardNumberElement [ready]");
-          }}
-          onChange={event => {
-            console.log("CardNumberElement [change]", event);
-          }}
-          onBlur={() => {
-            console.log("CardNumberElement [blur]");
-          }}
-          onFocus={() => {
-            console.log("CardNumberElement [focus]");
-          }}
         />
       </label>
       <br/>
@@ -92,18 +80,6 @@ const CreditCardForm = ({setPaymentData}) => {
         <strong>Expiration date</strong>
         <CardExpiryElement
           options={options}
-          onReady={() => {
-            console.log("CardNumberElement [ready]");
-          }}
-          onChange={event => {
-            console.log("CardNumberElement [change]", event);
-          }}
-          onBlur={() => {
-            console.log("CardNumberElement [blur]");
-          }}
-          onFocus={() => {
-            console.log("CardNumberElement [focus]");
-          }}
         />
       </label>
       <br/>
@@ -111,18 +87,6 @@ const CreditCardForm = ({setPaymentData}) => {
        <strong>CVC</strong>
         <CardCvcElement
           options={options}
-          onReady={() => {
-            console.log("CardNumberElement [ready]");
-          }}
-          onChange={event => {
-            console.log("CardNumberElement [change]", event);
-          }}
-          onBlur={() => {
-            console.log("CardNumberElement [blur]");
-          }}
-          onFocus={() => {
-            console.log("CardNumberElement [focus]");
-          }}
         />
       </label>
       <br/>

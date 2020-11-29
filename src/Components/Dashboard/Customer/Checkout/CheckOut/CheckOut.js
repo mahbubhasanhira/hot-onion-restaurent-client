@@ -12,6 +12,7 @@ const CheckOut = () => {
     const [checkCart, setCheckCart] = useState({foodData:[]});
     const [paymentData, setPaymentData] = useState({});
 
+    const token =  sessionStorage.getItem('token');
     const history = useHistory();
 let handleConfirm;
 if(shippingData.name){
@@ -27,9 +28,12 @@ if(shippingData.name){
                 orderTime: new Date().toLocaleTimeString(),
             };
              handleConfirm = () => {
-                fetch('https://hot-onion-101.herokuapp.com/add_order', {
+                fetch(`https://hot-onion-101.herokuapp.com/add_order?email=${loggedInUser.email}`, {
                     method:'POST',
-                    headers:{'Content-Type': 'application/json'},
+                    headers:{
+                        'Content-Type' : 'application/json',
+                        "authorization" : `Bearer ${token}`
+                    },
                     body:JSON.stringify(orderDetail)
                 })
                 .then(res => res.json())

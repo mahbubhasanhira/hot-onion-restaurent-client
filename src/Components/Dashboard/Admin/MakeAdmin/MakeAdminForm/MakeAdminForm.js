@@ -9,14 +9,18 @@ const MakeAdminForm = () => {
         const newEmail = {...adminEmail}
         newEmail[e.target.name] = e.target.value;
         setAdminEmail(newEmail);
-    }
-
+    };
+    
+const token =  sessionStorage.getItem('token');
 const  handleSubmit = (e) => {
     e.preventDefault();
     if(isAdmin){
         fetch(`https://hot-onion-101.herokuapp.com/make_admin?check_admin=${loggedInUser.email}`, {
                 method:'POST',
-                headers:{'Content-Type': 'application/json'},
+                headers:{
+                    'Content-Type' : 'application/json',
+                    "authorization" : `Bearer ${token}`
+                },
                 body:JSON.stringify(adminEmail)
             })
             .then(res => res.json())
