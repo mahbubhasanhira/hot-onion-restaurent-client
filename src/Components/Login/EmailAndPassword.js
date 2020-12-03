@@ -10,13 +10,17 @@ const EmailAndPassword = ({ onSubmit, setForgotPassword, forgotPassword, setNewU
 
     return (
         <div className='account_container'>
+            <div className='mb-4 pt-2 ml-auto mr-auto' style={{width:'350px',borderRadius:'5px', border:'1px solid lightgray', backgroundColor:'#ff312627'}}>
+                <p className='mt-0 mb-0'><strong>Note That: </strong>If you want check Admin Panel? <br/> Then you must use.<br/></p>
+                <p ><strong>email:</strong><span> admin@gmail.com</span><br/><strong>Password:</strong><span> @admin123</span></p>
+            </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="email" ref={register({required: true})} name="email" id="" placeholder='Email' />
+                <input type="email" defaultValue='admin@gmail.com' ref={register({required: true})} name="email" id="" placeholder='Email' />
                 <br/>
                 {errors.email && <span>Email is required</span>}
                 <br/>
                
-                    <input style={{display:'inline-block'}} type={typeText ? 'text': 'password'} ref={register({ required: true })} name="password"  placeholder='Password'/>
+                    <input style={{display:'inline-block'}} type={typeText ? 'text': 'password'}  defaultValue='@admin123' ref={register({ required: true })} name="password"  placeholder='Password'/>
                     { typeText ? 
                                 <FontAwesomeIcon onClick={() => setTypeText(!typeText)} className='typeChangeIcon' icon={faEye} />
                             :

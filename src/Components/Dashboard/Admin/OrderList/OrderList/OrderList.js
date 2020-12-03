@@ -10,7 +10,8 @@ const OrderList = () => {
 
 const handleLoadOrderList = () => {
     const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
-        const token =  sessionStorage.getItem('token');
+    const token =  sessionStorage.getItem('token');
+    if(userInfo){
         if(userInfo.email && token){
             fetch(`https://hot-onion-101.herokuapp.com/order_list?admin_email=${userInfo.email}`,{
                 method: 'GET',
@@ -23,6 +24,7 @@ const handleLoadOrderList = () => {
             .then(data => setOrderList(data))
             .catch(error => console.log(error));
         };
+    }
 }
 
 useEffect(() => {
@@ -32,11 +34,11 @@ useEffect(() => {
             setTimeout(() => {
                 handleLoadOrderList();
             }, 3000);
-        }
+        };
         if(token){
             handleLoadOrderList();
-        }
-    }
+        };
+    };
 },[]);
 
     return (

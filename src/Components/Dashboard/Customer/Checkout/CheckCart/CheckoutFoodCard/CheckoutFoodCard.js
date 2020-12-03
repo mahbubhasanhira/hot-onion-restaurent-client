@@ -34,7 +34,7 @@ const handleDelete = id => {
             <p className='mt-0 delete_btn'><FontAwesomeIcon onClick={() =>handleDelete(fdDetail._id)} icon={faTimes} /></p>
             <div className='d-flex justify-content-between'>
                 <div className="d-flex align-items-center pl-3">
-                    <img style={{width:'70px', height:'70px',borderRadius:'50%'}} className='mr-3 card-img' src={`data:image/jpeg;base64,${fdDetail.image.img}`} alt="clientPic"/>
+                    <img style={{width:'70px', height:'70px',borderRadius:'50%'}} className='mr-3 card-img' src={fdDetail.image_link} alt="clientPic"/>
                     <div className='text-left'>
                         <h5>{fdDetail.name}</h5>
                         <h3 style={{color:'#ff0000'}}>${fdDetail.price}</h3>

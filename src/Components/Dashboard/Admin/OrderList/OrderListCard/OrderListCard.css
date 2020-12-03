@@ -23,6 +23,9 @@
     width: 50px;
     height:50px
 }
+.see_more{
+    margin-right: 50px;
+}
 
 @media only screen and (max-width: 991px) {
     .right_inside_container{
@@ -31,6 +34,9 @@
   }
 
 @media only screen and (max-width: 767px) {
+    .see_more{
+        margin-right: 10px;
+    }
     .status_Container{
         margin-right: 10px;
     }

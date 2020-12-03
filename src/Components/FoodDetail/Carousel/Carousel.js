@@ -27,8 +27,8 @@ const Carousel = props => {
             {
                 sliderValue > 0 && <span><FontAwesomeIcon onClick={() => {if(sliderValue > 0 ){setSliderValue(sliderValue - 1)}}} className='arrow_icon' icon={faAngleLeft} /></span>
             }
-            <img onClick={() => handleImage(foodItem1)} src={foodItem1 && `data:image/jpeg;base64,${foodItem1.image.img}`} alt=""/>
-            <img onClick={() => handleImage(foodItem2)} src={foodItem2 && `data:image/jpeg;base64,${foodItem2.image.img}`} alt=""/>
+            <img onClick={() => handleImage(foodItem1)} src={foodItem1 && foodItem1.image_link} alt=""/>
+            <img onClick={() => handleImage(foodItem2)} src={foodItem2 &&foodItem2.image_link} alt=""/>
             {
                 sliderValue < (foodItem.length - 2)  && <span><FontAwesomeIcon onClick={() => {if(sliderValue < (foodItem.length - 2)){setSliderValue(sliderValue + 1)}}} className='arrow_icon' icon={faAngleRight} /></span>
             }

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../../../App';
 import uploadLogo from'../../../../../hot-onion-restaurent-resources/ICON/uploadLogo.PNG';
+import FileBase64 from 'react-file-base64';
 import './AddFoodForm.css';
 
 const AddFoodForm = () => {
@@ -14,11 +15,6 @@ const AddFoodForm = () => {
        setFoodDetail(newFoodDetail);
     }
 
-    const handleFileChange = (e) => {
-        const newFile = e.target.files[0];
-        setFile(newFile);
-    }
-
 const handleFoodDetailSubmit = (e) => {
     e.preventDefault();
     if(isAdmin){
@@ -28,7 +24,7 @@ const handleFoodDetailSubmit = (e) => {
         
         else if(file && file !== undefined){
             const formData = new FormData();
-            formData.append('file', file);
+            formData.append('image_link', file);
             formData.append('name', foodDetail.name);
             formData.append('title', foodDetail.title);
             formData.append('category', foodDetail.category);
@@ -49,14 +45,12 @@ const handleFoodDetailSubmit = (e) => {
                     }
                 }).catch(error => {
                     console.error(error)
-                })
-        }
-    }
-    
+                });
+            };
+        };
     if(!isAdmin){
         alert('Sorry, You are not Admin. So, you can not Add Food in Database')
     };
-
 }
     return (
         <div className='form_container'>
@@ -68,8 +62,8 @@ const handleFoodDetailSubmit = (e) => {
                     <input type="text" onChange={handleChange} name='title' className="form-control"  placeholder="Food Title" required/>
                 </div>
                 <div className="form-group">
-                    <select  id="category" className="form-control" onChange={handleChange} name='category'>
-                        <option  id='selected' selected="selected">Category</option>
+                    <select id="category" className="form-control" onChange={handleChange} name='category' required>
+                        <option  id='selected' value=''>Category</option>
                         <option  value="Breakfast">Breakfast</option>
                         <option  value="Lunch">Lunch</option>
                         <option  value="Dinner">Dinner</option>
@@ -83,9 +77,9 @@ const handleFoodDetailSubmit = (e) => {
                     <div className="form-group col-sm-6 my-1">
                         <input type="number" min='0' onChange={handleChange} name='price' className="form-control" placeholder="Price" required/>
                     </div>
-                    <div className="form-group col-sm-6 my-1">
-                        <input type="file" onChange={handleFileChange} name="file" id="file-1" className="inputFile inputFile-1" data-multiple-caption="{count} files selected" multiple=""/>
-                        <label className='upload_label' htmlFor="file-1"><img className='upload_img' src={uploadLogo} alt="upload"/> <span>Upload Food img</span></label>
+                    <div className="form-group file_base col-sm-6 my-1">
+                        <label className='upload_label' htmlFor="file-1"><img className='upload_img' src={uploadLogo} alt="upload"/> <span>Upload Food img</span></label> 
+                        <FileBase64 multiple={false} onDone={image => setFile(image.base64)} />
                     </div>
                 </div>
                 <button type="submit" className="d-flex justify-content-start form_submit_btn">Add Food</button>

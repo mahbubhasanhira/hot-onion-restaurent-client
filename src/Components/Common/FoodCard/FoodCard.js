@@ -11,11 +11,11 @@ const FoodCard = props => {
         history.push(`/${category}/${_id}`);
     }
     const quantity = 1;
-    const { name ,title, price, image, category, _id} = props.food;
+    const { name ,title, price, image_link, category, _id} = props.food;
     return (
             <Card style={{width:'18rem',position:'relative', border:'1px solid #ffffff'}}>
                 <div style={{marginBottom:'50px'}} onClick={handleSingleFood}>
-                    <Card.Img variant="top" className='food_img' src={`data:image/jpeg;base64,${image.img}`}/>
+                    <Card.Img variant="top" className='food_img' src={image_link}/>
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
                         <Card.Title>${price}</Card.Title>

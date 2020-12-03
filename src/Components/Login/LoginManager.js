@@ -140,13 +140,3 @@ export const handlePasswordReset = email =>{
           });
     }
     
-export const handleSignOut = () => {
-    return firebase.auth().signOut()
-        .then(res =>  {
-                const signInUser ={
-                isSignIn:false,
-                success:false,
-            };
-            return signInUser;
-        })
-    }

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import { handleGoogleSignIn, handleFbSignIn, handleSignOut, initializedLogInFramework, createUserWithEmailAndPassword, signInWithEmailAndPassword, handlePasswordReset } from './LoginManager';
+import { handleGoogleSignIn, handleFbSignIn, initializedLogInFramework, createUserWithEmailAndPassword, signInWithEmailAndPassword, handlePasswordReset } from './LoginManager';
 import logo from '../../hot-onion-restaurent-resources/logo2.png';
 import FacebookOrGoogle from './FacebookOrGoogle';
 import EmailAndPassword from './EmailAndPassword';
@@ -44,12 +44,9 @@ const Login = () => {
     };
 
     const signOut = () => {
-        handleSignOut()
-            .then(res =>{
-                handleResponse(res, false);
-                sessionStorage.removeItem(`token`);
-                sessionStorage.removeItem(`userInfo`);
-        });
+        sessionStorage.removeItem(`userInfo`);
+        sessionStorage.removeItem(`token`);
+        setLoggedInUser({isSignIn:false});
     };
 
     const onSubmit = data =>{

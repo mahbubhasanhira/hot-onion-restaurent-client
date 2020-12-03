@@ -35,7 +35,7 @@ useEffect(() =>{
                 <div className='container'>
                     <div className="row">
                         <div className='col-md-7 food_detail_img for_smallDevice'>
-                            <img src={`data:image/jpeg;base64,${foodDetail.image.img}`} alt="food Pic"/>
+                            <img src={foodDetail.image_link} alt="food Pic"/>
                         </div>
                         <div className='food_detail_data col-md-5'>
                             <h1>{foodDetail.name}</h1>
@@ -54,7 +54,7 @@ useEffect(() =>{
                             }
                         </div>
                         <div className='col-md-7 food_detail_img for_largeDevice'>
-                        <img src={`data:image/jpeg;base64,${foodDetail.image.img}`} alt="food Pic"/>
+                        <img src={foodDetail.image_link} alt="food Pic"/>
                         </div>
                     </div>
                 </div>
