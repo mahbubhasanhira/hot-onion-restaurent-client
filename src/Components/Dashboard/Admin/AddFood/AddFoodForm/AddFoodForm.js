@@ -30,6 +30,7 @@ const handleFoodDetailSubmit = (e) => {
             formData.append('category', foodDetail.category);
             formData.append('description', foodDetail.description);
             formData.append('price', foodDetail.price);
+            formData.append('token', `${'Bearer '+ sessionStorage.getItem('token')}`)
 
                 fetch(`https://hot-onion-101.herokuapp.com/add_food?check_admin=${loggedInUser.email}`, {
                     method: 'POST',
@@ -46,12 +47,12 @@ const handleFoodDetailSubmit = (e) => {
                 }).catch(error => {
                     console.error(error)
                 });
-            };
         };
-    if(!isAdmin){
-        alert('Sorry, You are not Admin. So, you can not Add Food in Database')
     };
-}
+    if(!isAdmin){
+        alert('Sorry, You are not Admin. So, you can not Add Food in Database');
+    };
+};console.log(file);
     return (
         <div className='form_container'>
             <form onSubmit={handleFoodDetailSubmit}> 
@@ -63,8 +64,7 @@ const handleFoodDetailSubmit = (e) => {
                 </div>
                 <div className="form-group">
                     <select id="category" className="form-control" onChange={handleChange} name='category' required>
-                        <option  id='selected' value=''>Category</option>
-                        <option  value="Breakfast">Breakfast</option>
+                        <option  id='selected' value="Breakfast">Breakfast</option>
                         <option  value="Lunch">Lunch</option>
                         <option  value="Dinner">Dinner</option>
                         <option  value="Snacks">Snacks</option>
@@ -79,7 +79,7 @@ const handleFoodDetailSubmit = (e) => {
                     </div>
                     <div className="form-group file_base col-sm-6 my-1">
                         <label className='upload_label' htmlFor="file-1"><img className='upload_img' src={uploadLogo} alt="upload"/> <span>Upload Food img</span></label> 
-                        <FileBase64 multiple={false} onDone={image => setFile(image.base64)} />
+                        <FileBase64 multiple={false} onDone={image => image.type.slice(0,5) === 'image' ? setFile(image.base64): alert('Please Select Just Image')} />
                     </div>
                 </div>
                 <button type="submit" className="d-flex justify-content-start form_submit_btn">Add Food</button>
