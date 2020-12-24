@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import footerLogo from '../../../hot-onion-restaurent-resources/logo.png';
+import Subscribe from './Subscribe/Subscribe';
 
 const Footer = () => {
     return (
@@ -10,10 +11,7 @@ const Footer = () => {
                    <div className='d-flex justify-content-start'>
                         <img className='footerLogo' src={footerLogo} alt=""/>
                    </div>
-                    <div className='search_input subscribe d-flex justify-content-start mt-5'>
-                        <input className='form_control' placeholder='example@gmail.com' type="text"/>
-                        <button className='search_btn'>Subscribe</button>
-                    </div> 
+                    <Subscribe/>
                 </div>
                 <div className="col-md-7 col-lg-6">
                     <div className='footer_nav_link_container'>

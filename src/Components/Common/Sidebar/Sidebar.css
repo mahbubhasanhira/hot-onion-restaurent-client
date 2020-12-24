@@ -17,11 +17,12 @@
     font-size: 16px;
     font-weight: 500;
     color: #000000;
-    transition:.5s;
 }
 .sidebar_link:hover{
     color: #e71010;
-    padding-left: 15px;
+}
+.sidebar_active{
+    color: #e71010;
 }
 @media only screen and (max-width: 991px) {
     .sidebar_option{

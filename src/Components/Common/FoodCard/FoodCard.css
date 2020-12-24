@@ -24,3 +24,17 @@
     bottom: 0;
     left: 38%;
 }
+
+.viewCart{
+    position: absolute;
+    bottom:0;
+    left: 30%;
+}
+
+.view_cart_link{
+    text-decoration: none;
+}
+
+.view_cart_link .add_to_cart_btn:hover{
+    color: rgb(233, 36, 36);
+}

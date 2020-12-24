@@ -12,50 +12,57 @@ const FoodCategoriesContainer = () => {
     const {allFood, setAllFood, cart} = useContext(UserContext);
     const [foodsCategory, setFoodsCategories] = useState([]);
     const [sliceValue, setSliceValue] = useState(6);
-    
-    const handleCategories = category => {
-        const newFoodCategory = allFood.filter(food => food.category === category)
-        setFoodsCategories(newFoodCategory);
-        setSliceValue(6);
-        //apply css for active categories
-        var categoryLink = document.querySelector('.nav_item');
-        var nav_link = categoryLink.getElementsByClassName("nav_link");
+    const [classCat, setClassCat] = useState('All');
 
-        for (var i = 0; i < nav_link.length; i++) {
-            nav_link[i].addEventListener("click", function() {
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-        });
-    };
-};
-    const handleSliceValue = () => {
-        setSliceValue(sliceValue + 6);
+
+const handleFilterProduct = product => {
+    const newFoodCategory = allFood.filter(food => food.category === product);
+    if(newFoodCategory.length > 0){
+     setFoodsCategories(newFoodCategory);
+     return true;
     }
+    if(newFoodCategory.length === 0){
+     setFoodsCategories(allFood);
+     return false;
+    }
+}
+
+    const handleCategories = category => {
+        setSliceValue(6);
+        setClassCat(category);
+        handleFilterProduct(category);
+    };
 
 useEffect(()=>{
- if(allFood.length > 0){
-    setFoodsCategories(allFood);
- }
+    const sessionClassCat = JSON.parse(sessionStorage.getItem('classCat'));
+    if(sessionClassCat){
+        setClassCat(sessionClassCat);
+    }
+    if(allFood.length > 0){
+        setFoodsCategories(allFood);
+        handleFilterProduct(sessionClassCat);
+    }
  if(allFood.length === 0){
     fetch('https://hot-onion-101.herokuapp.com/get_all_food')
     .then(res => res.json())
     .then(data => {
         if(data.length){
             setAllFood(data);
-            const newFoodCategory = data.filter(food => food.category === 'Breakfast');
+            const newFoodCategory = data.filter(food => food.category === sessionClassCat);
             if(newFoodCategory.length > 0){
                 setFoodsCategories(newFoodCategory);
             };
+            if(newFoodCategory.length === 0){
+                setFoodsCategories(data);
+            }
         };
     })
     .catch(err => console.log(err));
  }
 },[]);
-    
     return (
         <>
-            <CategoriesMenu handleCategories={handleCategories}/>
+            <CategoriesMenu classCat={classCat} handleCategories={handleCategories}/>
             <div className='container foodCard'>
                 {
                     foodsCategory.length > 0 ?
@@ -72,7 +79,7 @@ useEffect(()=>{
                     </>
                 :
                     <>
-                        <button onClick={handleSliceValue} className='check_your_food_active'>See More</button><br/>
+                        <button onClick={() => setSliceValue(sliceValue + 6)} className='check_your_food_active'>See More</button><br/>
                     </>
             }
             {

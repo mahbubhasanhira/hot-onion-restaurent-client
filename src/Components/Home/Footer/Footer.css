@@ -24,18 +24,21 @@
 .footer_top_link li{
     list-style-type: none;
     text-align: start;
-    line-height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     transition:.5s;
 }
 
 .footer_top_link li:hover{
     padding-left: 10px;
-    color:red;
 }
 
 .footer_top_link li a{
     text-decoration: none;
     color: #ffffff;
+}
+.footer_top_link li a:hover{
+    color:red;
 }
 
 .footer_bottom_part{
@@ -55,6 +58,34 @@
     text-decoration: none;
     color: #ffffff;
     margin: 0 20px;
+}
+
+.search_input{
+    margin: 0 auto;
+    display: inline;
+}
+.search_input .form_control{
+    border: none;
+    padding:7px 20px;
+    border-radius: 25px;
+}
+.search_input .form_control:focus{
+    border: none !important;
+}
+.search_input .search_btn{
+    background-color:rgb(231, 10, 10);
+    border:none;
+    border-radius: 25px;
+    padding:7px 30px;
+    margin-left: -30px;
+    color: rgb(255, 255, 255);
+}
+.search_input .search_btn:hover{
+    color:black
+}
+
+.footer_bottom_link a:hover{
+    color:red;
 }
 
 @media only screen and (max-width: 992px) {

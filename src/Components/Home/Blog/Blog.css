@@ -18,6 +18,11 @@
     border-radius: 20px;
     border: 1px solid #ffffff;
     margin: 15px;
+    height: 100%;
+}
+
+.custom_card:hover{
+    cursor:default!important;
 }
 
 .card_Body{
@@ -26,6 +31,7 @@
 
 .card_b_text{
     padding:0px 10px;
+    margin-top: 10px;
 }
 
 .card_p{
@@ -35,4 +41,12 @@
 .right_arrow{
     color: rgb(238, 21, 21);
     font-size: 18px;
+}
+.see_moreBtn{
+    font-weight: 500;
+    color: rgb(56, 56, 216);
+}
+.see_moreBtn:hover{
+    color: rgb(223, 16, 16);
+    cursor: pointer;
 }

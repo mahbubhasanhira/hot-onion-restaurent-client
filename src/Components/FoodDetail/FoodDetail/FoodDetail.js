@@ -26,7 +26,7 @@ useEffect(() =>{
         }
     })
     .catch(err => console.log(err));
-},[]);
+},[category, foodId]);
 
     return (
         <>
@@ -47,7 +47,7 @@ useEffect(() =>{
                                 </div>
                             </div>
 
-                            <AddToCartBtn foodQuantity={foodQuantity} foodPrice={foodDetail.price} foodId={foodId}/>  
+                            <AddToCartBtn fromCard={false} foodQuantity={foodQuantity} foodPrice={foodDetail.price} foodId={foodId}/>  
 
                             {
                                 foodDetail.category && <Carousel foodItem={foodItem} setFoodQuantity={setFoodQuantity} setFoodDetail={setFoodDetail} category={foodDetail.category}/>
