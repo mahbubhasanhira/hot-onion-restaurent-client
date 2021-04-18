@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
 import jwt_decode from "jwt-decode";
 
 const PrivateRoute = ({children, ...rest}) => {
     const {loggedInUser, setLoggedInUser} = useContext(UserContext);
-
+    const history = useHistory();
     const isLoggedIn = () => {
         const token = sessionStorage.getItem('token');
         if(!token){
@@ -18,7 +18,8 @@ const PrivateRoute = ({children, ...rest}) => {
         // will return false if expired and will return true if not expired
 
 
-        if(decodedToken.exp < currentTime){
+        if (decodedToken.exp < currentTime) {
+            history.push('/login')
             setLoggedInUser({});
             sessionStorage.removeItem('token');
             sessionStorage.removeItem(`userInfo`);

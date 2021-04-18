@@ -1,18 +1,17 @@
-import React, {  useContext, useEffect, useState } from 'react';
+import React, {  useContext, useEffect } from 'react';
 import Sidebar from '../../../../Common/Sidebar/Sidebar';
 import OrderListCard from '../OrderListCard/OrderListCard';
 import loading_spin from '../../../../../hot-onion-restaurent-resources/ICON/loadSpiner.gif';
 import { UserContext } from '../../../../../App';
 
 const OrderList = () => {
-    const {isAdmin} = useContext(UserContext);
-    const [orderList, setOrderList] = useState([]);
+    const { isAdmin, orderList, setOrderList } = useContext(UserContext);
 
 const handleLoadOrderList = () => {
     const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
     const token =  sessionStorage.getItem('token');
     if(userInfo){
-        if(userInfo.email && token){
+        if(userInfo.email && token ){
             fetch(`https://hot-onion-101.herokuapp.com/order_list?admin_email=${userInfo.email}`,{
                 method: 'GET',
                 headers:{
@@ -21,7 +20,9 @@ const handleLoadOrderList = () => {
                 }
             })
             .then(res => res.json())
-            .then(data => setOrderList(data))
+                .then(data => {
+                    setOrderList(data);
+                })
             .catch(error => console.log(error));
         };
     }
@@ -30,16 +31,17 @@ const handleLoadOrderList = () => {
 useEffect(() => {
     if(isAdmin){
         const token =  sessionStorage.getItem('token');
-        if(!token){
+        if(!token && !orderList.length){
             setTimeout(() => {
                 handleLoadOrderList();
             }, 3000);
         };
-        if(token){
+        if(token && !orderList.length){
             handleLoadOrderList();
         };
     };
-},[]);
+
+},[isAdmin, orderList.length] );
 
     return (
         <section>
@@ -54,7 +56,7 @@ useEffect(() => {
                             orderList.length > 0 ?
                             <div className="row right_inside_container">
                                 { 
-                                    orderList.map((order_list, index) => <OrderListCard key={orderList._id} index={index} order_list={order_list}/>)
+                                    orderList.map((order_list, index) => <OrderListCard key={order_list._id} index={index} order_list={order_list}/>)
                                 }
                             </div>
                             :

@@ -5,9 +5,8 @@ import loading_spin from '../../../../../hot-onion-restaurent-resources/ICON/loa
 import { UserContext } from '../../../../../App';
 
 const MyOrder = () => {
-    const {loggedInUser} = useContext(UserContext);
-    const [orderLists, setOrderLists] = useState([]);
-
+    const {loggedInUser, myOrderLists, setMyOrderLists} = useContext(UserContext);
+   
 const handleLoadOrder = () => {
     const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
     const token =  sessionStorage.getItem('token');
@@ -21,7 +20,7 @@ const handleLoadOrder = () => {
                 }
             })
             .then(res => res.json())
-            .then(data => setOrderLists(data))
+            .then(data => setMyOrderLists(data))
             .catch(error => console.log(error));
         };
     };
@@ -29,16 +28,16 @@ const handleLoadOrder = () => {
 
 useEffect(() => {
     const token =  sessionStorage.getItem('token');
-    if(!token){
+    if(!token && !myOrderLists.length){
         setTimeout(() => {
             handleLoadOrder();
         }, 4000);
     }
-    if(token){
+    if(token && !myOrderLists.length){
         handleLoadOrder();
     }
    
-},[]);
+},[myOrderLists.length]);
 
     return (
         <section>
@@ -50,10 +49,10 @@ useEffect(() => {
                     <div  className='dashboard_right_container'>
                         <h5 className='text-left mb-3'>My Order</h5>
                         {
-                            orderLists.length > 0 ?
+                            myOrderLists.length > 0 ?
                             <div className="row right_inside_container">
                                 { 
-                                    orderLists.map((orderList, index) => <MyOrderCard key={orderList._id} index={index} loggedInUser={loggedInUser} orderList={orderList}/>)
+                                    myOrderLists.map((orderList, index) => <MyOrderCard key={index} index={index} loggedInUser={loggedInUser} orderList={orderList}/>)
                                 }
                             </div>
                             :

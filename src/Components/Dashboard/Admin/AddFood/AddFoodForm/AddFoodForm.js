@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../../../App';
 import uploadLogo from'../../../../../hot-onion-restaurent-resources/ICON/uploadLogo.PNG';
-import FileBase64 from 'react-file-base64';
 import './AddFoodForm.css';
 
 const AddFoodForm = () => {
@@ -10,9 +9,10 @@ const AddFoodForm = () => {
     const [file, setFile] = useState(null);
 
     const handleChange = (e) => {
-       const newFoodDetail = {...foodDetail};
-       newFoodDetail[e.target.name] = e.target.value;
-       setFoodDetail(newFoodDetail);
+        const newFoodDetail = { ...foodDetail };
+        newFoodDetail.category = 'Breakfast';
+        newFoodDetail[e.target.name] = e.target.value;
+        setFoodDetail(newFoodDetail);
     }
 
 const handleFoodDetailSubmit = (e) => {
@@ -24,7 +24,7 @@ const handleFoodDetailSubmit = (e) => {
         
         else if(file && file !== undefined){
             const formData = new FormData();
-            formData.append('image_link', file);
+            formData.append('file', file);
             formData.append('name', foodDetail.name);
             formData.append('title', foodDetail.title);
             formData.append('category', foodDetail.category);
@@ -52,7 +52,21 @@ const handleFoodDetailSubmit = (e) => {
     if(!isAdmin){
         alert('Sorry, You are not Admin. So, you can not Add Food in Database');
     };
-};console.log(file);
+};
+    
+    const handleImage = e => {
+        if (e.target?.files[0]?.type?.slice(0, 5) === 'image') {
+            if (e.target?.files[0]?.size < 800000 ) {
+                setFile(e.target?.files[0]);
+            }
+            else {
+                alert('Image size is too large. You can upload around 500kb');
+            }
+        } else {
+            alert('Please Select Just Image');
+        }
+    }
+    
     return (
         <div className='form_container'>
             <form onSubmit={handleFoodDetailSubmit}> 
@@ -79,7 +93,7 @@ const handleFoodDetailSubmit = (e) => {
                     </div>
                     <div className="form-group file_base col-sm-6 my-1">
                         <label className='upload_label' htmlFor="file-1"><img className='upload_img' src={uploadLogo} alt="upload"/> <span>Upload Food img</span></label> 
-                        <FileBase64 multiple={false} onDone={image => image.type.slice(0,5) === 'image' ? setFile(image.base64): alert('Please Select Just Image')} />
+						<input type="file" name="myFile" id="" onChange={e => handleImage(e)} />
                     </div>
                 </div>
                 <button type="submit" className="d-flex justify-content-start form_submit_btn">Add Food</button>

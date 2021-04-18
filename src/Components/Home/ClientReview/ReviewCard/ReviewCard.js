@@ -26,7 +26,12 @@ const reviewStyle = {
                     </div>
                 </div>
                 <div className="text-center pb-0 card_over card-body">
-                    <p className='text-secondary'>{review.review_text.slice(0,100)}...</p>
+                    <p className='text-secondary'>
+                        {
+                            review.review_text.length < 100 ? review.review_text :
+                            review.review_text.slice(0, 100) + "..."
+                        }
+                    </p>
                 </div>
             </div>
         </div>

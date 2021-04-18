@@ -25,7 +25,7 @@ const FoodCard = ({food}) => {
     },[_id]);
 
     return (
-            <Card style={{width:'18rem',position:'relative', border:'1px solid #ffffff'}}>
+            <Card style={{width:'18rem',cursor:"pointer",position:'relative', border:'1px solid #ffffff'}}>
                 <div style={{marginBottom:'50px'}} onClick={handleSingleFood}>
                     <Card.Img variant="top" className='food_img' src={image_link}/>
                     <Card.Body>

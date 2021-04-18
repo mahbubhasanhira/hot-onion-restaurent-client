@@ -1,7 +1,7 @@
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import './OrderListCard.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 const OrderListCard = ({order_list, index}) => {
     const [status, setStatus] = useState(order_list.status);
@@ -46,9 +46,9 @@ useEffect(() => {
     if(order_list.paymentData.paymentMethod.id){
         setPaymentMethod('Payment By Credit Card');
     }
-}, []);
+}, [order_list.paymentData.paymentMethod.id]);
     return (
-        <div className='col-md-12 mt-3 mb-3 col-sm-6'>
+        <div className='col-md-6 mt-3 mb-3 col-sm-6'>
         <div className="card m-0 p-1" >
             <div className="mb-2 d-flex align-items-center justify-content-between pt-3 pl-3">
                 <h5>{index + 1}.</h5>
@@ -81,38 +81,40 @@ useEffect(() => {
                     </div>
                     <div>
                         <h5  style={{color:'green'}} className='mt-3'>Food Detail:</h5>
-                        <div className='table-responsive-md'>
-                            <table className="table">
-                                <thead className="thead-light">
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">Food ID</th>
-                                        <th scope="col">Quantity</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {
-                                        order_list.checkCart.foodData.map((food, index) =>
-                                            <tr>
-                                                <th scope="row">{index + 1}</th>
-                                                <td>{food._id}</td>
-                                                <td>{food.quantity}</td>
-                                                <td>${food.price/food.quantity}</td>
-                                                <td>${food.price}</td>
-                                            </tr>
-                                        )
-                                    }
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div>
+                                <div className='table-responsive'>
+                                <table className="table">
+                                    <thead className="thead-light">
+                                        <tr>
+                                            <th scope="col">No</th>
+                                            <th scope="col">Food ID</th>
+                                            <th scope="col">Quantity</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            order_list.checkCart.foodData.map((food, index) =>
+                                                <tr key={index}>
+                                                    <th scope="row">{index + 1}</th>
+                                                    <td>{food._id}</td>
+                                                    <td className='text-center'>{food.quantity}</td>
+                                                    <td>${food.price/food.quantity}</td>
+                                                    <td>${food.price}</td>
+                                                </tr>
+                                            )
+                                        }
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <div>

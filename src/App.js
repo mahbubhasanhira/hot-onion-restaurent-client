@@ -17,6 +17,7 @@ import OrderList from './Components/Dashboard/Admin/OrderList/OrderList/OrderLis
 import AddFood from './Components/Dashboard/Admin/AddFood/AddFood/AddFood';
 import MakeAdmin from './Components/Dashboard/Admin/MakeAdmin/MakeAdmin/MakeAdmin';
 import CheckOut from './Components/Dashboard/Customer/Checkout/CheckOut/CheckOut';
+import BottomToTopBtn from './Components/Common/BottomToTopBtn/BottomToTopBtn';
 
 export const UserContext = createContext();
 
@@ -24,7 +25,9 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   const [isAdmin, setIsAdmin] = useState(false);
   const [cart, setCart] = useState([]);
-  const [allFood, setAllFood] = useState([])
+  const [allFood, setAllFood] = useState([]);
+  const [orderList, setOrderList] = useState([]);
+  const [myOrderLists, setMyOrderLists] = useState([]);
 
 useEffect(() =>{
   const newLoggedInUser = JSON.parse(sessionStorage.getItem('userInfo'));
@@ -47,8 +50,9 @@ useEffect(() =>{
 },[loggedInUser.email]);
 
   return (
-     <UserContext.Provider value={{loggedInUser, setLoggedInUser, isAdmin, cart, setCart, allFood, setAllFood}}>
-        <main className="App">
+     <UserContext.Provider value={{loggedInUser, setLoggedInUser, isAdmin, cart, setCart, allFood, setAllFood, orderList, setOrderList, myOrderLists, setMyOrderLists}}>
+      <main className="App">
+        <BottomToTopBtn/>
           <Router>
             <Header/>
             <Switch>

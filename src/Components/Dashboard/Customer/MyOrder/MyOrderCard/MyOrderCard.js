@@ -54,7 +54,7 @@ useEffect(() => {
                             <tbody>
                                 {
                                     orderList.checkCart.foodData.map((food, index) =>
-                                        <tr>
+                                        <tr key={index }>
                                             <th scope="row">{index + 1}</th>
                                             <td>{food.quantity}</td>
                                             <td>${food.price/food.quantity}</td>
