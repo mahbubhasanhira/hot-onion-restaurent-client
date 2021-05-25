@@ -1,11 +1,10 @@
-import React, { useContext, useEffect } from 'react';
-import { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import CategoriesMenu from '../CategoriesMenu/CategoriesMenu';
-import FoodCard from '../../Common/FoodCard/FoodCard';
-import './FoodCategoriesContainer.css';
 import { UserContext } from '../../../App';
 import loadSpiner from '../../../hot-onion-restaurent-resources/ICON/loadSpiner.gif';
+import FoodCard from '../../Common/FoodCard/FoodCard';
+import CategoriesMenu from '../CategoriesMenu/CategoriesMenu';
+import './FoodCategoriesContainer.css';
 
 const FoodCategoriesContainer = () => {
 
@@ -34,7 +33,7 @@ const handleFilterProduct = product => {
     };
 
 useEffect(()=>{
-    const sessionClassCat = JSON.parse(sessionStorage.getItem('classCat'));
+    const sessionClassCat = JSON.parse(localStorage.getItem('classCat'));
     if(sessionClassCat){
         setClassCat(sessionClassCat);
     }

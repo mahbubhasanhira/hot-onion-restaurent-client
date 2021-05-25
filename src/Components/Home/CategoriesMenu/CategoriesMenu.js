@@ -4,7 +4,7 @@ import './CategoriesMenu.css';
 
 const CategoriesMenu = ({handleCategories, classCat}) => {
     const handleSession = category => {
-        sessionStorage.setItem('classCat', JSON.stringify(category));
+        localStorage.setItem('classCat', JSON.stringify(category));
     }
     return (
         <nav className='container nav_item'>

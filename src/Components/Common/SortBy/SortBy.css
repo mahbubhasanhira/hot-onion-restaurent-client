@@ -1,0 +1,26 @@
+.sort_container {
+	width: 250px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-right: 0 !important;
+}
+
+.all {
+	color: #086597;
+	background-color: #79c7f180;
+}
+
+.All {
+	color: #086597;
+	background-color: #ffffff;
+}
+
+@media only screen and (max-width: 600px) {
+	.sort_container {
+		width: 180px;
+	}
+	.sort_contain {
+		width: 100px !important;
+	}
+}

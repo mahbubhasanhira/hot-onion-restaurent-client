@@ -1,7 +1,7 @@
 import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import AddToCartBtn from '../AddToCartBtn/AddToCartBtn';
 import './FoodCard.css';
@@ -17,7 +17,7 @@ const FoodCard = ({food}) => {
     const { name ,title, price, image_link, category, _id} = food;
 
     useEffect(() => {
-        const cartProduct =  JSON.parse(sessionStorage.getItem('cart'));
+        const cartProduct =  JSON.parse(localStorage.getItem('cart'));
         if(cartProduct){
             const cartProductId = cartProduct.filter(product => product._id === _id);
             cartProductId.length > 0 && setViewCart(cartProductId[0]._id);

@@ -7,7 +7,7 @@ const ReviewForm = () => {
     const {loggedInUser} = useContext(UserContext);
     const { register, handleSubmit } = useForm();
     
-    const token =  sessionStorage.getItem('token');
+    const token =  localStorage.getItem('token');
      const onSubmit = (data) => {
          const review = {...data, 'img': loggedInUser.photoURL};
         

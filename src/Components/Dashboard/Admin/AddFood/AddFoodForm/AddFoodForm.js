@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../../../App';
-import uploadLogo from'../../../../../hot-onion-restaurent-resources/ICON/uploadLogo.PNG';
+import uploadLogo from '../../../../../hot-onion-restaurent-resources/ICON/uploadLogo.PNG';
 import './AddFoodForm.css';
 
 const AddFoodForm = () => {
@@ -30,7 +30,7 @@ const handleFoodDetailSubmit = (e) => {
             formData.append('category', foodDetail.category);
             formData.append('description', foodDetail.description);
             formData.append('price', foodDetail.price);
-            formData.append('token', `${'Bearer '+ sessionStorage.getItem('token')}`)
+            formData.append('token', `${'Bearer '+ localStorage.getItem('token')}`)
 
                 fetch(`https://hot-onion-101.herokuapp.com/add_food?check_admin=${loggedInUser.email}`, {
                     method: 'POST',

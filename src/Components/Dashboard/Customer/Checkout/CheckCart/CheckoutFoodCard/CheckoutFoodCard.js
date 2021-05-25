@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
 import { faMinus, faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../../../../App';
 
 const CheckoutFoodCard = ({fdDetail, idAndQuantity, setIdAndQuantity, cartFoodDetail ,setCartFoodDetail}) => {
@@ -16,7 +15,7 @@ const handleLatestQuantity = (food_id, method) =>{
         filterById.quantity = LatestQuantity;
         const others = idAndQuantity.filter(fd => fd._id !== food_id);
         const newCart = [filterById, ...others];
-        sessionStorage.setItem('cart', JSON.stringify(newCart));
+        localStorage.setItem('cart', JSON.stringify(newCart));
         setIdAndQuantity(newCart);
     };
 };
@@ -27,7 +26,7 @@ const handleDelete = id => {
     setCart(removedSelected);
     const removedPassData = cartFoodDetail.filter(food => food._id !== id);
     setCartFoodDetail(removedPassData);
-    sessionStorage.setItem('cart', JSON.stringify(removedSelected));
+    localStorage.setItem('cart', JSON.stringify(removedSelected));
 };
     return (
         <div style={{backgroundColor:'#F5F5F5', borderRadius:'10px'}} className="mt-0 mb-3 pt-2 pb-2 text-center" >

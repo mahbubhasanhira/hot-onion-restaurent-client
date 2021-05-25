@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import { UserContext } from '../../../App';
 
@@ -27,7 +27,7 @@ const AddToCartBtn = ({fromCard, foodId, foodQuantity, foodPrice, setViewCart}) 
             newCart = [...cart, newObj];
         }
         setCart(newCart);
-        sessionStorage.setItem(`cart`, JSON.stringify(newCart));
+        localStorage.setItem(`cart`, JSON.stringify(newCart));
     };
 
     return (

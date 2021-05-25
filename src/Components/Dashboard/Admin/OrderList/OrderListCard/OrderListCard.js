@@ -7,7 +7,7 @@ const OrderListCard = ({order_list, index}) => {
     const [status, setStatus] = useState(order_list.status);
     const [paymentMethod, setPaymentMethod] = useState('Cash On Delivery');
     
-    const token =  sessionStorage.getItem('token');
+    const token =  localStorage.getItem('token');
     const handleUpdateStatus = (e) => {
         const id = e.target.name;
         const changeStatus = e.target.value;
@@ -54,7 +54,7 @@ useEffect(() => {
                 <h5>{index + 1}.</h5>
                 <div className='status_Container'>
                     <select  className={customColor} id="select1" onChange={handleUpdateStatus} name={order_list._id}>
-                    <option value={status} id='selected' selected='selected'>{order_list.status}</option>
+                    <option value={status} id='selected' defaultValue='selected'>{order_list.status}</option>
                     <option className='Pending'  value="Pending" >Pending</option>
                     <option className='Done' value="Done">Done</option>
                     <option className='ongoing' value="On going">On Going</option>

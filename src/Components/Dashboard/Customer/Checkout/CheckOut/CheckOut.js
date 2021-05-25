@@ -12,7 +12,7 @@ const CheckOut = () => {
     const [checkCart, setCheckCart] = useState({foodData:[]});
     const [paymentData, setPaymentData] = useState({});
 
-    const token =  sessionStorage.getItem('token');
+    const token =  localStorage.getItem('token');
     const history = useHistory();
 let handleConfirm;
 if(shippingData.name){
@@ -44,7 +44,7 @@ if(shippingData.name){
                     setPaymentData({});
                     let foodData = [];
                     setCheckCart({foodData});
-                    sessionStorage.removeItem('cart');
+                    localStorage.removeItem('cart');
                     history.push('/dashboard/myOrder');
                      setTimeout(() => {
                         window.location.reload();

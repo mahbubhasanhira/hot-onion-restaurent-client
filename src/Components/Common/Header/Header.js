@@ -1,12 +1,12 @@
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext } from 'react';
 import { Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from '../../../hot-onion-restaurent-resources/logo2.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import './Header.css';
-import Sidebar from '../Sidebar/Sidebar';
 import { UserContext } from '../../../App';
+import logo from '../../../hot-onion-restaurent-resources/logo2.png';
+import Sidebar from '../Sidebar/Sidebar';
+import './Header.css';
 
 const Header = () => {
     const {loggedInUser, setLoggedInUser, isAdmin, cart} = useContext(UserContext);
@@ -15,8 +15,10 @@ const Header = () => {
     const cartAllFoodQuantity = getQuantity.reduce((acc, curr) => acc + curr, 0);
 
     const handleSignOut = () => {
-        sessionStorage.removeItem(`userInfo`);
-        sessionStorage.removeItem(`token`);
+        localStorage.removeItem(`userInfo`);
+        localStorage.removeItem(`token`);
+        localStorage.removeItem(`orderListSortStatus`);
+        localStorage.removeItem(`myOrderListSortStatus`);
         setLoggedInUser({isSignIn:false});
         
     }
@@ -36,6 +38,12 @@ const Header = () => {
         redirect_to_Customer = '/dashboard/checkout';
     }
 
+    const handleCheckoutIcon = () => {
+        if(cart.length === 0){
+            alert('Your cart is empty. Please at first add a food in your cart');
+        }
+    }
+
     return (
         <nav className="container header navbar navbar-expand-lg navbar-light">
             <Navbar.Brand className='home'>
@@ -47,7 +55,7 @@ const Header = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarText">
                 <div className="navbar-nav ml-auto d-flex align-items-center">
-                    <Link className='checkOutIcon' to={redirect_to_Customer}><FontAwesomeIcon icon={faShoppingCart} /><span className='foodQuantity'>{cartAllFoodQuantity}</span></Link>
+                    <Link className='checkOutIcon' onClick={handleCheckoutIcon} to={redirect_to_Customer}><FontAwesomeIcon icon={faShoppingCart} /><span className='foodQuantity'>{cartAllFoodQuantity}</span></Link>
                     {
                         loggedInUser.isSignIn &&
                         <p className='userName'>{loggedInUser.name}</p>

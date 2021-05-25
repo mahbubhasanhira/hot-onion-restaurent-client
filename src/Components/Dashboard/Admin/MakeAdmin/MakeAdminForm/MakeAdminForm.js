@@ -11,7 +11,7 @@ const MakeAdminForm = () => {
         setAdminEmail(newEmail);
     };
     
-const token =  sessionStorage.getItem('token');
+const token =  localStorage.getItem('token');
 const  handleSubmit = (e) => {
     e.preventDefault();
     if(isAdmin){
