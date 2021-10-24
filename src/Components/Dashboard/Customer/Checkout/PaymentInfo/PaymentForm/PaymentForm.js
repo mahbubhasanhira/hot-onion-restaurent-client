@@ -1,8 +1,7 @@
-import React from 'react';
-import { useState } from 'react';
-import {Elements} from '@stripe/react-stripe-js';
-import {loadStripe} from '@stripe/stripe-js';
-import PAYMENT_API from '../../../../../../secretAPI';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import React, { useState } from 'react';
+import { PAYMENT_API } from '../../../../../../secretAPI';
 import CreditCardForm from './CreditCardForm';
 
 

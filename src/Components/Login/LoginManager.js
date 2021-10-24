@@ -1,6 +1,6 @@
 import * as firebase from "firebase/app";
 import "firebase/auth";
-import firebaseConfig from "../../firebase.config";
+import {firebaseConfig} from "../../secretAPI";
 
 export const initializedLogInFramework = () => {
 	if (firebase.apps.length === 0) {

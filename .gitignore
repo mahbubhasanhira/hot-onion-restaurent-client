@@ -11,12 +11,6 @@
 # production
 /build
 
-#/firebaseConfig
-/src/firebase.config.js
-
-#/mailChimpUri
-/src/mailChimpUri.js
-
 #/secreatAPI
 /src/secretAPI.js
 

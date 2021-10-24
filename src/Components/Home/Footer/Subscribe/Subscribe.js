@@ -1,5 +1,5 @@
 import React from 'react';
-import mailChimp_uri from '../../../../mailChimpUri';
+import { mailChimp_uri } from '../../../../secretAPI';
 
 const Subscribe = () => {    
     return (

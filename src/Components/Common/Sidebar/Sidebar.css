@@ -1,4 +1,15 @@
+.sidebar_container{
+    position: fixed;
+    top: 50px;
+    left: 0;
+}
+
+.sidebar_container div{
+    width: 100%;
+}
+
 .sidebar_option{
+    width: 100%;
     margin-top: 40px;
     margin-left: 15%;
 }
@@ -25,6 +36,10 @@
     color: #e71010;
 }
 @media only screen and (max-width: 991px) {
+    .sidebar_container{
+        position: relative;
+        top: 0;
+    }
     .sidebar_option{
         margin-top: 0px;
         margin-left: 0;

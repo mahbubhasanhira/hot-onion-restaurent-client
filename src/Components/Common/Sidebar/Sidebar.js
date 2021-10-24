@@ -14,8 +14,8 @@ const Sidebar = () => {
     },[path]);
 
     return (
-        <div>
-            <div className='sidebar_container'>
+        <div className='sidebar_container'>
+            <div>
                 <div className='sidebar_option'>
                     <ul className='for_admin'>
                        { isAdmin &&

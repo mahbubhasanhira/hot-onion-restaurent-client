@@ -4,7 +4,6 @@ import loading_spin from "../../../../../hot-onion-restaurent-resources/ICON/loa
 import Sidebar from "../../../../Common/Sidebar/Sidebar";
 import SortBy from "../../../../Common/SortBy/SortBy";
 import OrderListCard from "../OrderListCard/OrderListCard";
-
 const OrderList = () => {
 	const {
 		isAdmin,
@@ -70,7 +69,7 @@ const OrderList = () => {
 				<div className="col-md-10 dashboard_r_div_container">
 					<div className="dashboard_right_container">
 						<div className="mb-3 d-flex align-items-center justify-content-between">
-							<h5 className="text-left">My Order</h5>
+							<h5 className="text-left">Order List</h5>
 							<SortBy
 								sortStatus={sortStatusForOrderList}
 								setSortStatus={setSortStatusForOrderList}
