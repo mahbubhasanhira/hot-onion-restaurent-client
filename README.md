@@ -1,31 +1,39 @@
-# MetaBook Social Media By Mahbub
+# Hot Onion Restaurant By Mahbub
 
-## MetaBook
 
-### It's a Fullstack project
+## hot-onion-restaurent-server
+
+
+### It's a MERN stack project
+
 
 ### Project Features:
+   * The user can order the food of his choice.
+   * Admin dashboard and user dashboard options are different.
+   * Admin can see all order data from his dashboard and can change the order status.
+   * Admin can add products from his dashboard.
+   * An admin can add another person as admin.
+   * Users can pay with stripe or cash on delivery.
+   * Users can see all his order history, current order, and order detail from his dashboard.
+   * Users can give us a real-time review which will show on the home page.
+   * Device friendly and responsive
+   * Secured Backend API with users jwt token.
 
-- The users can maintain individual account..
-- Is has Login and Register system.
-- Both server side and client side are secure by json web token.
-- Users can create a new post with text or photo.
-- User can Tag other users that he already follows.
-- They can make to follow others user.
-- user can update his profile and cover picture.
-- user can also update his information.
-- Other user can see your followers.
+
 
 ### Usages Technology:
-**Frontend:** `Javascript, ReactJs, Sass, Node-Sass, Material-UI, , socket.io-client`<br />
-**Bankend:** `Node JS, Express, Mongoose, express-fileupload.`<br />
+**Frontend:** `Html, CSS, Bootstrap, React-Bootstrap, React JS, Javascript, Firebase.`<br />
+**Bankend:** `Node JS, Express.`<br />
 **Database:** `MongoDB.`<br />
-**Other:** `Axios, React-router-dom, React-input-emoji, timeago.js, jsonwebtoken, Dotenv, helmet, morgan, imgbb-uploader, bcrypt, cors, etc.`<br />
+**Other:** `React Hook Form, React Router Dom, React Stripe, JWT decode, Font Awesome Icon, Dotenv, etc.`<br />
+
+
+
 
 ### Project Links:
-**Live site:** [https://metabook-by-mahbub.netlify.app](https://metabook-by-mahbub.netlify.app)<br />
-**Frontend Github:** [https://github.com/MAHBUB-HASAN-HIRA/MetaBook/tree/master/Client](https://github.com/MAHBUB-HASAN-HIRA/MetaBook/tree/master/Client)<br />
-**Backend Github:** [https://github.com/MAHBUB-HASAN-HIRA/MetaBook/tree/master/server](https://github.com/MAHBUB-HASAN-HIRA/MetaBook/tree/master/server)<br />
+**Live site:** [https://hot-onion-by-mahbub.web.app/](https://hot-onion-by-mahbub.web.app/)<br />
+**Frontend Github:** [https://github.com/MAHBUB-HASAN-HIRA/hot-onion-restaurent-client](https://github.com/MAHBUB-HASAN-HIRA/hot-onion-restaurent-client)<br />
+**Backend Github:**  [https://github.com/MAHBUB-HASAN-HIRA/hot-onion-restaurent-server](https://github.com/MAHBUB-HASAN-HIRA/hot-onion-restaurent-server)<br />
 **My Portfolio:** [https://mahbubhasanhira.com/](https://mahbubhasanhira.com/)<br />
 
 ## Thank you For visiting My Projects
